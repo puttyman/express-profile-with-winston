@@ -17,7 +17,7 @@ app.use('/', function(req, res, next) {
 // 404s
 app.use(function(req, res) {
   res.status(404).json({
-    message: 'Sorry cant find that!'
+    message: '404: Page not found!'
   });
 });
 
@@ -39,7 +39,5 @@ app.use(function(err, req, res) {
 var server = app.listen(3000, function() {
   var host = 'localhost';
   var port = server.address().port;
-
-  console.log('Running in ' + process.env.NODE_ENV +  ' environment');
-  console.log('Upgrade engine app listening at http://%s:%s', host, port);
+  console.log('App listening at http://%s:%s', host, port);
 });
